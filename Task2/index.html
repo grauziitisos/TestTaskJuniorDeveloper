@@ -4,6 +4,67 @@
     <meta charset="UTF-8">
     <title>Subscribe</title>
     <link rel="stylesheet" href="Default.css">
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+function validate (){
+    var email = $('#email').val();
+    var agreeTerms = $('#cb_agreeTerms').is(':checked');
+
+    $(".error").remove();
+    if(!agreeTerms){
+        $('#errorContainer').append('<span class="error">You must accept the terms and conditions </span><br/>');
+    }
+    if (email.length < 1) {
+        $('#errorContainer').append('<span class="error">Email address is required</span>');
+    } else {
+        var regEx = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+        var validEmail = regEx.test(email);
+        if (!validEmail) {
+            $('#errorContainer').append('<span class="error">Please provide a valid e-mail address!</span>');
+        }else{
+            var emailCheck = email.toLowerCase();
+            if(emailCheck[emailCheck.length-2]=='c'&&emailCheck[emailCheck.length-1]=='o')
+                $('#errorContainer').append('<span class="error">We are not accepting subscriptions from Colombia emails!</span>');
+        }
+    }
+    if($(".error").length > 0){
+        $("#submitButton").prop("disabled",true);
+    }else{
+        $("#submitButton").prop("disabled",false);
+        $(".subscribe").hide();
+        $(".subscribeDescription").hide();
+        $(".emailContainer").hide();
+        $(".termsContainer").hide();
+        $("#errorContainer").hide();
+        $(".hrContainer").hide();
+        $(".preUnion").show();
+        $(".union").show();
+        $(".thanksTitle").show();
+        $(".thanksDescription").show();
+        $(".hrThanksContainer").show();
+        $(".iconsContainer").addClass("iconsThanksContainer").removeClass("iconsContainer");
+    }
+}
+        $(document).ready(function () {
+
+            $('#mailForm').submit(function (e) {
+                validate();
+
+                if ($(".error").length > 0) {
+                    e.preventDefault();
+                    if(typeof(window.validationObject) =="undefined"){
+                        window.validationObject = {handlersAttached: true}
+                        $("#cb_agreeTerms").change(validate);
+                        $("#email").on('input', validate);
+                    }
+                }
+            });
+
+        })
+    </script>
 </head>
 <body>
 <div class="background"></div>
@@ -15,17 +76,27 @@
     <a href="#">Contact</a>
 </div>
 <div class="formContainer">
-    <form action="#" method="post">
+    <form action="#" method="post" id="mailForm">
         <fieldset>
     <div class="formBgContainer">
 <div class="subscribe">Subscribe to newsletter</div>
 <div class="subscribeDescription" >Subscribe to our newsletter and get 10% discount on pineapple glasses.</div>
-<div class="emailContainer"><div class="emailInnerContainer"><input type="email" name="email" id="email" placeholder="Type your email address here…"><input type="submit" class="submit" value="" /></div>
+<div class="emailContainer"><div class="emailInnerContainer"><input type="text" name="email" id="email" placeholder="Type your email address here…"><input type="submit" class="submit" id="submitButton" value="" /></div>
 </div>
 <div class="termsContainer"><input type="checkbox" id="cb_agreeTerms" name="cb_agreeTerms" /> <label for="cb_agreeTerms">I agree to <a href="#">terms of service</a></label></div>
-<div class="hrContainer"><hr /></div>
+<div id="errorContainer"></div>
+        <div class="hrContainer"><hr /></div>
+
+            <div class="preUnion" style="display: none;"></div>
+            <div class="union"  style="display: none;"></div>
+            <div class="thanksTitle"  style="display: none;">Thanks for subscribing</div>
+            <div class="thanksDescription"  style="display: none;">You have successfully subscribed to our email listing. Check your email for the discount code.</div>
+            <div class="hrThanksContainer"  style="display: none;"><hr /></div>
+
 <div class="iconsContainer"><span id="ic_facebook"></span><span id="ic_instagram"></span>
     <span id="ic_twitter"></span><span id="ic_youtube"></span></div>
 </div>
-        </fieldset></form></div>
+        </fieldset></form>
+
+</div>
 </body></html>

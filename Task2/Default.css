@@ -153,6 +153,12 @@
 color : #233759;
 }
 
+#errorContainer{
+    position: absolute;
+    top: 710px;
+    margin-left: 100px;
+    color: red;
+}
 .hrContainer{
     position: absolute;
     top: 740px;
@@ -381,7 +387,11 @@ color : #233759;
     .termsContainer a {
         color:  #131821;
     }
-
+#errorContainer{
+    position: static;
+    margin-left: 20px;
+    color: red;
+}
     .hrContainer{
         position: static;
         width: 335px;
