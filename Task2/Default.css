@@ -1,0 +1,456 @@
+.menu{
+    margin: 0;
+    padding: 0;
+    width: 680px;
+    background: #ffffff;
+    position: absolute;
+    top: 114px;
+}
+.menu a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #6A707B;
+}
+.logo{
+    background: url("Pineapple_logo.png");
+    background-size: 25px 40px;
+    display: inline-block;
+    width: 25px;
+    height: 40px;
+    margin-right: 15px;
+}
+#logoText {
+    /*113-30*/
+    margin-right: 83px;
+    color: #131821;
+    font-size: 16px;;
+}
+.subscribe{
+    font-family: Georgia,Times,Times New Roman,serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+   /* margin-top: 234px;*/
+    margin-left: 140px;
+    color: #131821;
+    position: absolute;
+    top: 374px;
+}
+
+.union{
+    position: absolute;
+    top: 269px;
+    margin-left: 140px;
+    width: 44px;
+    height: 70px;
+    background: url("Union.png");
+}
+
+.thanksTitle{
+    font-family: Georgia,Times,Times New Roman,serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    /* margin-top: 234px;*/
+    margin-left: 140px;
+    color: #131821;
+    position: absolute;
+    top: 369px;
+}
+
+.subscribeDescription{
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+    width: 400px;
+    color: #6A707B;
+    margin-top: 15px;
+    margin-left: 140px;
+    position: absolute;
+    top: 433px;
+}
+.thanksDescription{
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+    width: 400px;
+    color: #6A707B;
+    margin-top: 15px;
+    margin-left: 140px;
+    position: absolute;
+    top: 433px;
+}
+.emailContainer{
+    position: absolute;
+    top: 539px;
+}
+.emailInnerContainer{
+    margin-left: 100px;
+    border: 1px solid #E3E3E4;
+    border-left: solid 4px #4066A5;
+}
+#email{
+    border: none;
+    height: 70px;
+    /*width: 663px;*/
+    width: 561px;
+    font-size: 24px;
+}
+
+#email::placeholder {
+    color: #6A707B;
+    font-size: 24px;
+}
+.background{
+    background-image: url("Pineapple.png");
+    position: relative;
+    width: 100%;
+    margin-left: 688px;
+    height: 1080px;
+}
+.submit{
+    background: #FFFFFF url("ic_arrow.png") no-repeat center;
+    border: none;
+    width: 102px;
+    height: 70px;
+    font-size: 24px;
+}
+
+.termsContainer{
+    position: absolute;
+    top: 662px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    /* identical to box height, or 175% */
+
+
+    color: #6A707B;
+    padding-left: 140px;
+}
+
+.termsContainer input{
+    width: 26px;
+    height: 26px;
+}
+
+.termsContainer a {
+    color:  #131821;
+}
+/* according to Styleguide */
+.termsContainer a:hover{
+    color: #4066A5;
+}
+.termsContainer a:active{
+color : #233759;
+}
+
+.hrContainer{
+    position: absolute;
+    top: 740px;
+    width: 680px;
+}
+
+.hrThanksContainer{
+    position: absolute;
+    top: 539px;
+    width: 680px;
+}
+
+.hrContainer hr{
+    width: 400px;
+    margin: auto;
+    border: none;
+    height: 1px;
+    background: #E3E3E4;
+}
+
+.hrThanksContainer hr{
+    width: 400px;
+    margin: auto;
+    border: none;
+    height: 1px;
+    background: #E3E3E4;
+}
+
+.iconsContainer{
+    position: absolute;
+    top: 791px;
+    width: 680px;
+    text-align: center;
+}
+.iconsThanksContainer{
+    position: absolute;
+    top: 590px;
+    width: 680px;
+    text-align: center;
+}
+
+.iconsContainer span{
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid #E3E3E4;
+    margin-left: 20px;
+}
+.iconsThanksContainer span{
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid #E3E3E4;
+    margin-left: 20px;
+}
+
+#ic_facebook{
+    background: url("ic_facebook.png") center no-repeat;
+}
+#ic_facebook:hover{
+    background: url("ic_facebook_hover.png") center no-repeat , #4267B2;
+}
+#ic_facebook:active{
+    background: url("ic_facebook_hover.png") center no-repeat , #2F4A80;
+}
+#ic_instagram{
+    background: url("ic_instagram.png") center no-repeat;
+}
+#ic_instagram:hover{
+    background: url("ic_instagram_hover.png") center no-repeat, #C13584;
+}
+#ic_instagram:active{
+    background: url("ic_instagram_hover.png") center no-repeat, #8F2762;
+}
+#ic_twitter{
+    background: url("ic_twitter.png") center no-repeat;
+}
+#ic_twitter:hover{
+    background: url("ic_twitter_hover.png") center no-repeat, #1DA1F2;
+}
+#ic_twitter:active{
+    background: url("ic_twitter_hover.png") center no-repeat, #177FBF;
+}
+#ic_youtube{
+    background: url("ic_youtube.png") center no-repeat;
+}
+#ic_youtube:hover {
+    background: url("ic_youtube_hover.png") center no-repeat, #FF0000;
+}
+#ic_youtube:active {
+    background: url("ic_youtube_hover.png") center no-repeat, #CC0000;
+}
+
+@media screen and (max-width: 700px) {
+    .menu{
+        margin: 0;
+        padding: 0;
+        width: 680px;
+        background: #ffffff;
+        position: absolute;
+        top: 0px;
+    }
+    .background{
+        background-image: url("image_summer.png");
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 746px;
+        margin-left: 0px;
+    }
+    #logoText {
+        display: none;
+    }
+    .formContainer{
+        position: absolute;
+        top: 188px;
+    }
+    .formBgContainer{
+        width: 335px;
+        margin-left: 18px;
+        background: #FFFFFF;
+    }
+    .union{
+        position: static;
+        margin-left: 20px;
+        /*margin-top: 30px;*/
+        margin-bottom: 39px;
+    }
+    .preUnion{
+        height:30px;
+    }
+    .subscribe{
+        position: static;
+        font-family: Georgia;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 34px;
+        margin-left: 20px;
+        color: #131821;
+    }
+    .thanksTitle{
+        position: static;
+        font-family: Georgia;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 34px;
+        margin-left: 20px;
+        color: #131821;
+    }
+    .subscribeDescription{
+        position: static;
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        /* or 175% */
+        width: 295px;
+        color: #6A707B;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+    .thanksDescription{
+        position: static;
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        /* or 175% */
+        width: 295px;
+        color: #6A707B;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+
+    .emailContainer{
+        position: static;
+        margin-top: 20px;
+    }
+.emailInnerContainer{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid #E3E3E4;
+    border-left: solid 4px #4066A5;
+}
+    #email{
+        border: none;
+        margin-left: 0px;
+        height: 60px;
+        width: 225px;
+        font-size: 16px;
+    }
+
+    #email::placeholder {
+        color: #6A707B;
+        font-size: 16px;
+    }
+    .submit{
+        background: #FFFFFF url("ic_arrow.png") no-repeat center;
+        border: none;
+        width: 50px;
+        height: 60px;
+        font-size: 16px;
+    }
+    .termsContainer{
+        position: static;
+        margin-top: 20px;
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        /* identical to box height, or 175% */
+        color: #6A707B;
+        padding-left: 20px;
+    }
+
+    .termsContainer input{
+        width: 26px;
+        height: 26px;
+    }
+
+    .termsContainer a {
+        color:  #131821;
+    }
+
+    .hrContainer{
+        position: static;
+        width: 335px;
+        margin-top: 20px;
+    }
+    .hrThanksContainer{
+        position: static;
+        width: 335px;
+        margin-top: 20px;
+    }
+    .hrContainer hr{
+        width: 295px;
+        margin: auto;
+        border: none;
+        height: 1px;
+        background: #E3E3E4;
+
+    }
+
+    .hrThanksContainer hr{
+        width: 295px;
+        margin: auto;
+        border: none;
+        height: 1px;
+        background: #E3E3E4;
+
+    }
+
+    .iconsContainer{
+        position: static;
+        margin-top: 20px;
+        padding-bottom: 30px;
+        width: 335px;
+        text-align: center;
+    }
+    .iconsThanksContainer{
+        position: static;
+        margin-top: 20px;
+        padding-bottom: 30px;
+        width: 335px;
+        text-align: center;
+    }
+    .iconsContainer span{
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 2px solid #E3E3E4;
+        margin-left: 20px;
+    }
+    .iconsThanksContainer span{
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 2px solid #E3E3E4;
+        margin-left: 20px;
+    }
+    #ic_facebook{
+        background: url("ic_facebook.png") center no-repeat;
+    }
+    #ic_instagram{
+        background: url("ic_instagram.png") center no-repeat;
+    }
+    #ic_twitter{
+        background: url("ic_twitter.png") center no-repeat;
+    }
+    #ic_youtube{
+        background: url("ic_youtube.png") center no-repeat;
+    }
+
+}
