@@ -59,7 +59,7 @@ class Index_model extends Model
 
         $sql .=  " ORDER BY " . ($sort ?? "date ASC")
             . " LIMIT " . $offset . ", " . $no_of_records_per_page;
-        var_dump($sql);
+        //var_dump($sql);
         $data = $this->db->query($sql);
         $list = array();
         while ($row = $data->fetch()) {

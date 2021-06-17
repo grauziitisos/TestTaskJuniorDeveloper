@@ -14,13 +14,14 @@ class Index_controller extends Controller
         require_once "models/index_model.php";
         $this->model = new Index_model();
         $this->model->connect();
-        var_dump($_POST);
+        //var_dump($_POST);
         if (isset($_POST["delete"])) {
             if (count($_POST) > 1) {
                 $this->massDelete();
             }
         }
-        $updateProvidersList = false;
+        //aggresive use of db :(
+        $updateProvidersList = true/*false*/;
         if(isset($_POST["search"])){
             $updateProvidersList = true;
                 $_SESSION["search"] = $_POST["searchText"];
@@ -75,7 +76,7 @@ class Index_controller extends Controller
         $this->view->total_pages = $this->model->getTotalPages($_SESSION["sort"] ?? NULL, $provider != '' ? $provider : NULL, isset($_SESSION["search"]) && $_SESSION["search"] != ""? $_SESSION["search"] : NULL, $pageno);
         $this->view->Subscriptions = $this->model->getList($_SESSION["sort"] ?? NULL, $provider != '' ? $provider : NULL,isset($_SESSION["search"]) && $_SESSION["search"] != ""? $_SESSION["search"] : NULL, $pageno);
         $this->view->Providers = $_SESSION["providers"];
-        var_dump($this->view->Providers);
+       // var_dump($this->view->Providers);
         $this->view->render('index');
     }
 

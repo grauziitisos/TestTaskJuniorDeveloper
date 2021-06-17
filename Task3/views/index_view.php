@@ -51,14 +51,14 @@ for ($i = 0; $i < $length; $i++) { ?>
         </tbody>
     </table>
 <hr />
-    <ul class="pagination">
-        <li><a href="?pageno=1">First</a></li>
-        <li class="<?php if($this->pageno <= 1){ echo 'disabled'; } ?>">
+    <div class="pagination">
+        <a href="?pageno=1">First</a>
+
             <a href="<?php if($this->pageno <= 1){ echo '#'; } else { echo "?pageno=".($this->pageno - 1); } ?>">Prev</a>
-        </li>
-        <li class="<?php if($this->pageno >= $this->total_pages){ echo 'disabled'; } ?>">
+
+
             <a href="<?php if($this->pageno >= $this->total_pages){ echo '#'; } else { echo "?pageno=".($this->pageno + 1); } ?>">Next</a>
-        </li>
-        <li><a href="?pageno=<?php echo $this->total_pages; ?>">Last</a></li>
-    </ul>
+
+        <a href="?pageno=<?php echo $this->total_pages; ?>">Last</a>
+    </div>
 </form>
