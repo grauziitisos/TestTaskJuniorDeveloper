@@ -11,17 +11,26 @@
         <div class="col">
             <h1>Product List</h1>
         </div>
-        <div class="col col-lg-1 align-self-center">
             <input type="button" id="btnAdd" value="ADD" />
-        </div>
-        <div class="col col-lg-1 align-self-center">
             <input type="submit" value="DELETE CHECKED" name="delete" />
-        </div>
+        <input type="text" name="searchText" value="<?= $this->searchText ?? '' ?>" />
+        <input type="submit" name="search" />
     </div>
 </div>
 
 <hr />
     <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th><a href="?sort=date">Date</a></th>
+            <th><a href="?sort=email">email</a></th>
+            <th><?php $length = count($this->Providers);
+                foreach($this->Providers as $provider => $provider_value) { ?>
+                    <input type="button" onclick="window.location='?provider=<?= $provider  ?>'" value="<?= $provider  ?>" >
+                <?php } ?> <input type="button" onclick="window.location='?provider='" value="reset provider" ></th>
+        </tr>
+        </thead>
         <tbody>
 <?php
 $length = count($this->Subscriptions);
@@ -33,6 +42,7 @@ for ($i = 0; $i < $length; $i++) { ?>
             </td>
             <td><?php echo $this->Subscriptions[$i]->getEmail(); ?>
             </td>
+    <td></td>
 </tr>
     <?php
 }
@@ -41,4 +51,14 @@ for ($i = 0; $i < $length; $i++) { ?>
         </tbody>
     </table>
 <hr />
+    <ul class="pagination">
+        <li><a href="?pageno=1">First</a></li>
+        <li class="<?php if($this->pageno <= 1){ echo 'disabled'; } ?>">
+            <a href="<?php if($this->pageno <= 1){ echo '#'; } else { echo "?pageno=".($this->pageno - 1); } ?>">Prev</a>
+        </li>
+        <li class="<?php if($this->pageno >= $this->total_pages){ echo 'disabled'; } ?>">
+            <a href="<?php if($this->pageno >= $this->total_pages){ echo '#'; } else { echo "?pageno=".($this->pageno + 1); } ?>">Next</a>
+        </li>
+        <li><a href="?pageno=<?php echo $this->total_pages; ?>">Last</a></li>
+    </ul>
 </form>

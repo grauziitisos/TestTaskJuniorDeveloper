@@ -5,4 +5,4 @@ require ('lib\Model.php');
 require ('lib\Database.php');
 include ('controllers\subscribe_controller.php');
 $controller = new Subscribe_controller();
-$controller->loadModel('subscribe');
+//$controller->loadModel('subscribe');

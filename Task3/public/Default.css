@@ -253,6 +253,9 @@ color : #233759;
 #ic_youtube:active {
     background: url("ic_youtube_hover.png") center no-repeat, #CC0000;
 }
+#btnAdd{
+    margin-right: 30px;
+}
 
 @media screen and (max-width: 700px) {
     .menu{
