@@ -1,6 +1,3 @@
-sudo wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
-sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
-sudo sh -c 'echo "deb http://deb.opera.com/opera-stable/ stable non-free" >> /etc/apt/sources.list.d/opera.list' 
 # sudo apt-get remove opera-stable
 # sudo add-apt-repository multiverse
 #sudo apt update -y
@@ -28,4 +25,7 @@ sudo dpkg -i ./ea
 sudo wget -q -O c https://go.microsoft.com/fwlink/?LinkID=760868
 sudo dpkg -i ./c
 
+sudo wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
+sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
+sudo sh -c 'echo "deb http://deb.opera.com/opera-stable/ stable non-free" >> /etc/apt/sources.list.d/opera.list' 
 sudo apt install -y opera-stable
